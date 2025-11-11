@@ -1,0 +1,135 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #e0f7fa, #f0f4f8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#game-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-width: 300px;
+    position: relative; /* タイマー配置の基準 */
+}
+
+/* ▼ タイマーのスタイルを追加 ▼ */
+#timer {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    background-color: #fd7e14; /* オレンジ */
+    border-radius: 50%; /* 円形 */
+    width: 60px;
+    height: 60px;
+    line-height: 60px; /* 文字を上下中央に */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+/* 残り10秒で赤くする */
+#timer.low-time {
+    background-color: #dc3545; /* 赤 */
+}
+
+h1 {
+    color: #333;
+}
+#question-display {
+    font-size: 80px; 
+    font-weight: bold;
+    color: #0056b3; 
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+input[type="text"] {
+    font-size: 18px;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+#retry-button {
+    background-color: #28a745; 
+    margin-top: 15px;
+}
+#retry-button:hover {
+    background-color: #218838;
+}
+.button-link {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #6c757d; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; 
+    transition: background-color 0.3s;
+}
+.button-link:hover {
+    background-color: #5a6268;
+}
+#result-message {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    min-height: 30px; 
+}
+.correct { color: green; }
+.incorrect { color: red; }
+#incorrect-list {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 16px;
+    background-color: #fff9f9; 
+    border: 1px solid #fbe0e0; 
+    border-radius: 5px;
+    padding: 10px 15px;
+    max-height: 150px; 
+    overflow-y: auto; 
+}
+#incorrect-list h3 {
+    font-size: 18px;
+    color: #d9534f; 
+    margin-top: 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #fbe0e0;
+    padding-bottom: 5px;
+}
+#incorrect-list ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+#incorrect-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+#incorrect-list li:last-child {
+    border-bottom: none; 
+}

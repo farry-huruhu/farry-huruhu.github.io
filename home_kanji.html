@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漢字一文字クイズ ホーム</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #e0f7fa, #f0f4f8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        #home-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            min-width: 300px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        /* ボタン共通スタイル */
+        .start-button {
+            display: block;
+            width: 100%;
+            box-sizing: border-box; /* パディングを含めて幅を計算 */
+            font-size: 20px;
+            padding: 15px 30px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-bottom: 15px; /* ボタン間の余白 */
+        }
+        .start-button:hover {
+            opacity: 0.9;
+        }
+        
+        /* 練習モード (青) */
+        .button-practice {
+            background-color: #007bff;
+        }
+        .button-practice:hover {
+            background-color: #0056b3;
+        }
+
+        /* チャレンジモード (オレンジ) */
+        .button-challenge {
+            background-color: #fd7e14;
+        }
+        .button-challenge:hover {
+            background-color: #c96511;
+        }
+        
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="home-container">
+        <h1>漢字一文字クイズ</h1>
+        <p>（漢字→国名）</p>
+        
+        <a href="quiz_kanji.html" class="start-button button-practice">
+            練習モード (時間無制限)
+        </a>
+
+        <a href="quiz_challenge.html" class="start-button button-challenge">
+            チャレンジモード (60秒)
+        </a>
+
+        <a href="index.html" class="back-link">
+            ◀ メインホームに戻る
+        </a>
+    </div>
+
+</body>
+</html>

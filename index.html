@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズゲーム センター</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #e0f7fa, #f0f4f8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box; /* パディングを含めて高さを計算 */
+        }
+        #home-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            min-width: 300px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        /* ボタンのスタイル */
+        .start-button {
+            display: block; /* ボタンを縦に並べる */
+            font-size: 20px;
+            padding: 15px 30px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-bottom: 15px; /* ボタン間の余白 */
+        }
+        .start-button:hover {
+            background-color: #0056b3;
+        }
+        /* 2つ目のボタンの色を変更 */
+        .button-flag {
+            background-color: #17a2b8;
+        }
+        .button-flag:hover {
+            background-color: #117a8b;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="home-container">
+        <h1>クイズゲーム センター</h1>
+        <p>遊ぶクイズを選んでね！</p>
+        
+        <a href="home_kanji.html" class="start-button">
+            漢字一文字クイズ
+        </a>
+        <a href="quiz_flag.html" class="start-button button-flag">
+            国旗→国名クイズ
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国旗→国名クイズ (10問)</title>
+    
+    <link rel="stylesheet" href="style_flag.css">
+    
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>国旗→国名クイズ</h1>
+        <p>この国旗が表す国名を答えてね！</p>
+        
+        <div id="question-display">？</div>
+        
+        <div id="answer-area">
+            <input type="text" id="answer-input" placeholder="例: 米">
+            <button id="submit-button">回答</button>
+        </div>
+        
+        <p id="result-message"></p>
+        
+        <button id="retry-button" style="display: none;">もう一度遊ぶ</button>
+        <a href="index.html" id="home-button" class="button-link" style="display: none;">ホームに戻る</a>
+    </div>
+
+    <script src="quiz_flag.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国名一文字クイズ (10問)</title>
+    
+    <link rel="stylesheet" href="style_kanji.css">
+    
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>国名一文字クイズ</h1>
+        <p>この漢字が表す国名をカタカナ（漢字）で答えてね！</p>
+        
+        <div id="question-display">？</div>
+        
+        <div id="answer-area">
+            <input type="text" id="answer-input" placeholder="例: アメリカ">
+            <button id="submit-button">回答</button>
+        </div>
+        
+        <p id="result-message"></p>
+        
+        <button id="retry-button" style="display: none;">もう一度遊ぶ</button>
+        <a href="index.html" id="home-button" class="button-link" style="display: none;">ホームに戻る</a>
+    </div>
+
+    <script src="quiz_kanji.js"></script>
+
+</body>
+</html>
