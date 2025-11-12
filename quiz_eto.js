@@ -1,4 +1,6 @@
-// --- クイズのデータ ---
+/* ファイル名: quiz_eto.js */
+
+// --- クイズのデータ --- (変更なし)
 const quizData = [
     { q: "壬申の乱", a: "672" },
     { q: "乙巳の変", a: "645" },
@@ -13,7 +15,7 @@ const quizData = [
     { q: "丁酉の乱", a: "1597" }
 ];
 
-// --- 必要なHTML要素を取得 ---
+// --- 必要なHTML要素を取得 --- (変更なし)
 const questionDisplay = document.getElementById("question-display");
 const answerInput = document.getElementById("answer-input");
 const submitButton = document.getElementById("submit-button");
@@ -21,31 +23,20 @@ const resultMessage = document.getElementById("result-message");
 const answerArea = document.getElementById("answer-area"); 
 const retryButton = document.getElementById("retry-button"); 
 
-// --- 変数の準備 ---
+// --- 変数の準備 --- (変更なし)
 let currentQuizIndex = 0; 
 let currentAnswer = "";
 const maxQuestions = 10; 
 
-// --- 関数定義 ---
-
-/**
- * 新しいゲームを開始する関数
- */
+// --- 関数定義 --- (startNewGame, setQuestion, showGameEnd は変更なし)
 function startNewGame() {
-    quizData.sort(() => Math.random() - 0.5); // シャッフル
+    quizData.sort(() => Math.random() - 0.5);
     currentQuizIndex = 0; 
-    
-    // UIをリセット
     questionDisplay.style.color = '#0056b3'; 
     answerArea.style.display = 'block'; 
     retryButton.style.display = 'none'; 
-    
     setQuestion(); 
 }
-
-/**
- * 画面に問題を表示する関数
- */
 function setQuestion() {
     if (currentQuizIndex >= maxQuestions || currentQuizIndex >= quizData.length) {
         showGameEnd();
@@ -54,16 +45,11 @@ function setQuestion() {
     const quiz = quizData[currentQuizIndex];
     questionDisplay.textContent = quiz.q; 
     currentAnswer = quiz.a;             
-    
     answerInput.value = "";
     resultMessage.textContent = "";
     resultMessage.className = "";
     answerInput.focus();
 }
-
-/**
- * ゲーム終了処理の関数
- */
 function showGameEnd() {
     questionDisplay.textContent = "終了！";
     questionDisplay.style.color = '#333'; 
@@ -74,11 +60,20 @@ function showGameEnd() {
 }
 
 /**
- * 回答をチェックする関数
+ * ★ 回答をチェックする関数 (ここを修正)
  */
 function checkAnswer() {
     const userAnswer = answerInput.value; 
     
+    // ★ 追加: 入力が空かどうかをチェック
+    // .trim() は、スペースだけ入力された場合も「空」とみなす処理
+    if (userAnswer.trim() === "") {
+        resultMessage.textContent = "文字を入力してください";
+        resultMessage.className = "incorrect"; // 赤文字で表示
+        return; // 入力が空なので、ここで処理を終了する
+    }
+    
+    // (↓ 元からあった判定処理)
     if (userAnswer === currentAnswer) {
         // 正解
         resultMessage.textContent = "正解！ 🎉";
@@ -90,7 +85,7 @@ function checkAnswer() {
         }, 800); 
         
     } else {
-        // 不正解 (答えを表示して次に進む)
+        // 不正解
         resultMessage.textContent = `残念！正解は ${currentAnswer} でした。`; 
         resultMessage.className = "incorrect"; 
         
@@ -101,23 +96,14 @@ function checkAnswer() {
     }
 }
 
-// --- イベントリスナーの登録 ---
-// ページ読み込み完了(DOMContentLoaded)を待ってから実行
+// --- イベントリスナーの登録 --- (変更なし)
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // 最初のゲームを開始
     startNewGame();
-
-    // 「回答」ボタンがクリックされたら
     submitButton.addEventListener("click", checkAnswer);
-    
-    // エンターキーでも回答
     answerInput.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
             checkAnswer();
         }
     });
-    
-    // 「もう一度遊ぶ」ボタンがクリックされたら
     retryButton.addEventListener("click", startNewGame);
 });
