@@ -3,89 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>クイズゲームセンター</title>
+    <title>サービス終了のお知らせ</title>
+    
     <style>
         body {
-            font-family: sans-serif;
-            text-align: center;
-            background: linear-gradient(to bottom, #e0f7fa, #f0f4f8);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+            background-color: #f4f7f6; /* 優しい背景色 */
+            color: #333;
+            line-height: 1.7;
+            
+            /* 画面の中央に表示するための設定 */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            margin: 0;
             padding: 20px;
-            box-sizing: border-box; 
+            box-sizing: border-box; /* paddingを含めて計算 */
         }
-        #home-container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            min-width: 300px;
+        
+        .container {
+            background-color: #ffffff; /* 白いカード */
+            padding: 30px 40px;
+            border-radius: 8px; /* 角を丸くする */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 影 */
+            max-width: 600px;
+            width: 100%;
+            text-align: center; /* 中央揃え */
         }
+        
         h1 {
-            color: #333;
-            margin-bottom: 20px;
+            color: #d9534f; /* 少し落ち着いた赤色 */
+            font-size: 24px;
+            border-bottom: 2px solid #f0f0f0; /* 下線 */
+            padding-bottom: 15px;
+            margin-top: 0;
         }
+        
         p {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 30px;
+            font-size: 16px;
+            margin-bottom: 0; /* 最後のPタグの余白を削除 */
         }
-        /* ボタンのスタイル */
-        .start-button {
-            display: block; /*ボタンを 縦に並べる */
-            font-size: 20px;
-            padding: 15px 30px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            margin-bottom: 15px; 
-            min-width: 250px; /* ★ボタンの幅を揃える */
-            box-sizing: border-box; /* ★パディングを含めて幅を計算 */
-        }
-        .start-button:hover {
-            background-color: #0056b3;
-        }
-        
-        /* 2つ目のボタンの色の変更*/
-        .button-flag {
-            background-color: #17a2b8;
-        }
-        .button-flag:hover {
-            background-color: #117a8b;
-        }
-        
-        /* ★ 3つ目のボタン (干支) の色を追加 */
-        .button-eto {
-            background-color: #28a745; /* 緑色 */
-        }
-        .button-eto:hover {
-            background-color: #218838;
-        }
-        
     </style>
 </head>
 <body>
 
-    <div id="home-container">
-        <h1>クイズゲームセンター</h1>
-        <p>遊ぶクイズを選んでね！</p>
+    <div class="container">
         
-        <a href="home_kanji.html" class="start-button">
-            漢字一文字クイズ
-        </a>
-        <a href="quiz_flag.html" class="start-button button-flag">
-            国旗ー国名クイズ
-        </a>
+        <h1>サービス終了のお知らせ</h1>
         
-        <a href="quiz_eto.html" class="start-button button-eto">
-            干支と年号クイズ
-        </a>
+        <p>
+            当サービスは、誠に勝手ながら終了いたしました。
+        </p>
+        <p>
+            新サービスが欲しい方は担当者に直接お問い合わせください
+        </p>
         
     </div>
 
